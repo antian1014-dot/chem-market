@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>化学品市況 2026年05月09日 18:43</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#fff;color:#111;font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.4}
+*{box-sizing:border-box}
+.g-hd{background:#d9161c;display:flex;align-items:center;gap:12px;padding:0 20px;height:42px}
+.g-logo{color:#fff;font-size:18px;font-weight:900;letter-spacing:-0.02em;font-family:'Noto Sans JP',sans-serif}
+.g-sep{width:1px;height:18px;background:rgba(255,255,255,.4)}
+.g-ttl{color:rgba(255,255,255,.88);font-size:13px;font-weight:500}
+.g-time{margin-left:auto;color:rgba(255,255,255,.65);font-size:11px}
+
+/* ── FXストリップ ── */
+.fx-strip{background:#f7f7f7;border-bottom:1px solid #ddd;padding:0 20px;display:flex;gap:0;overflow-x:auto}
+.fx-item{display:flex;align-items:center;gap:5px;padding:6px 16px 6px 0;margin-right:16px;border-right:1px solid #e0e0e0;white-space:nowrap;flex-shrink:0}
+.fx-item:last-child{border-right:none}
+.fx-k{font-size:11px;color:#888;font-weight:500}
+.fx-v{font-size:14px;font-weight:700;color:#111}
+.fx-u{font-size:10px;color:#aaa}
+
+/* ── 凡例 ── */
+.legend{background:#fff;border-bottom:1px solid #e8e8e8;padding:5px 20px;font-size:11px;color:#666;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.lup{color:#d9161c;font-weight:700}
+.ldn{color:#2060c8;font-weight:700}
+
+/* ── メイン ── */
+.wrap{max-width:960px;margin:0 auto;padding:16px 20px 60px}
+
+/* ── テーブル ── */
+table{width:100%;border-collapse:collapse;border:1px solid #d0d0d0}
+tr{border-bottom:1px solid #e8e8e8}
+tr:last-child{border-bottom:none}
+
+/* セクションヘッダー行 */
+tr.sec-header td{
+  background:#f5f5f5;
+  color:#333;
+  font-size:12px;
+  font-weight:700;
+  padding:6px 12px;
+  border-bottom:1px solid #ccc;
+  border-top:2px solid #d9161c;
+}
+
+/* データ行 */
+td{padding:7px 12px;vertical-align:middle;white-space:nowrap}
+tr:hover td{background:#fffbf2}
+
+.td-name{font-size:13px;font-weight:500;color:#111;min-width:180px;text-align:left}
+.item-link{color:#111;text-decoration:none;border-bottom:1px dotted #aaa}
+.item-link:hover{color:#d9161c;border-bottom-color:#d9161c}
+.td-local{text-align:left;min-width:180px}
+.local-num{font-size:13px;font-weight:600;color:#111}
+.local-unit{font-size:10px;color:#aaa}
+
+.td-usdmt{text-align:right;font-size:16px;font-weight:700;color:#111;min-width:90px}
+.td-usdkg{text-align:right;font-size:12px;color:#555;min-width:80px}
+.td-jpykg{text-align:right;font-size:12px;color:#555;min-width:80px}
+
+.td-chg{text-align:right;font-size:12px;font-weight:700;min-width:140px}
+.td-chg.up{color:#d9161c}
+.td-chg.dn{color:#2060c8}
+.td-chg.flat{color:#888}
+.td-chg.na{color:#ccc;text-align:right}
+
+.td-date{text-align:right;font-size:11px;color:#bbb;min-width:76px}
+
+/* ヘッダー行 */
+thead th{background:#f5f5f5;font-size:11px;font-weight:700;color:#888;padding:6px 12px;text-align:right;border-bottom:2px solid #d0d0d0;white-space:nowrap}
+thead th:first-child,thead th:nth-child(2){text-align:left}
+
+/* フッター */
+.foot{margin-top:20px;padding-top:12px;border-top:1px solid #e0e0e0;font-size:10px;color:#aaa;line-height:2}
+</style>
+</head>
+<body>
+
+<div class="g-hd">
+  <span class="g-logo">化学市況</span>
+  <span class="g-sep"></span>
+  <span class="g-ttl">Chemical Market Intelligence</span>
+  <span class="g-time">更新　2026年05月09日 18:43</span>
+</div>
+
+<div class="fx-strip"><span class="fx-item"><span class="fx-k">USD/JPY</span><span class="fx-v">156.056</span><span class="fx-u">円</span></span><span class="fx-item"><span class="fx-k">USD/CNY</span><span class="fx-v">6.812</span><span class="fx-u">元</span></span><span class="fx-item"><span class="fx-k">EUR/USD</span><span class="fx-v">1.177</span><span class="fx-u">USD</span></span><span class="fx-item"><span class="fx-k">USD/KRW</span><span class="fx-v">1,446.550</span><span class="fx-u">₩</span></span><span class="fx-item"><span class="fx-k">USD/SGD</span><span class="fx-v">1.268</span><span class="fx-u">S$</span></span></div>
+
+<div class="legend">
+  <span>前月比（USD/MT換算）:</span>
+  <span class="lup">▲ 赤＝上昇</span>
+  <span class="ldn">▼ 青＝下落</span>
+    <span style="margin-left:8px;padding-left:8px;border-left:1px solid #ddd">
+      <span style="font-size:10px;font-weight:700;color:#1d4ed8;background:#eff6ff;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe">JPY</span>&nbsp;円（1USD＝156.06円）
+      &ensp;
+      <span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #fecaca">CNY</span>&nbsp;人民元（1USD＝6.812元）
+      &ensp;
+      <span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #bbf7d0">USD</span>&nbsp;米ドル
+    </span>
+</div>
+
+<div class="wrap">
+<table>
+  <thead>
+    <tr>
+      <th>品目</th>
+      <th>現地通貨建て</th>
+      <th>USD/MT</th>
+      <th>USD/kg</th>
+      <th>円/kg</th>
+      <th>前月比(変化率)</th>
+      <th>対象月</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="sec-header"><td colspan="8">⛽ 上流原料</td></tr><tr>
+  <td class="td-name"><a href="https://www.daikeikagaku.co.jp/naphtha/" target="_blank" class="item-link">国産ナフサ基準価格</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#1d4ed8;background:#eff6ff;padding:1px 5px;border-radius:2px;border:1px solid #1d4ed833">JPY</span>&nbsp;<span class="local-num">66,069</span>&nbsp;<span class="local-unit">円/KL</span></td>
+  <td class="td-usdmt">588.0</td><td class="td-usdkg">0.5880</td><td class="td-jpykg">¥91.76</td>
+  <td class="td-chg up">+28.3(+5.06%)</td>
+  <td class="td-date">2026-03</td>
+</tr><tr>
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/CL=F/" target="_blank" class="item-link">WTI原油</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">93.17</span>&nbsp;<span class="local-unit">USD/bbl</span></td>
+  <td class="td-usdmt">682.9</td><td class="td-usdkg">0.6829</td><td class="td-jpykg">¥106.57</td>
+  <td class="td-chg dn">-66.7(-8.90%)</td>
+  <td class="td-date">2026-05-06</td>
+</tr><tr>
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/BZ=F/" target="_blank" class="item-link">Brent原油</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">101.26</span>&nbsp;<span class="local-unit">USD/bbl</span></td>
+  <td class="td-usdmt">742.2</td><td class="td-usdkg">0.7422</td><td class="td-jpykg">¥115.82</td>
+  <td class="td-chg dn">-63.1(-7.84%)</td>
+  <td class="td-date">2026-05-06</td>
+</tr><tr>
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/NG=F/" target="_blank" class="item-link">天然ガス(NYMEX)</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">2.751</span>&nbsp;<span class="local-unit">USD/MMBtu</span></td>
+  <td class="td-usdmt na">—</td><td class="td-usdkg na">—</td><td class="td-jpykg na">—</td>
+  <td class="td-chg na">—</td>
+  <td class="td-date">2026-05-06</td>
+</tr><tr class="sec-header"><td colspan="8">🧪 メタノール</td></tr><tr>
+  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（アジア太平洋）</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">740</span>&nbsp;<span class="local-unit">USD/MT</span></td>
+  <td class="td-usdmt">740.0</td><td class="td-usdkg">0.7400</td><td class="td-jpykg">¥115.48</td>
+  <td class="td-chg na">—</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（中国）</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">610</span>&nbsp;<span class="local-unit">USD/MT</span></td>
+  <td class="td-usdmt">610.0</td><td class="td-usdkg">0.6100</td><td class="td-jpykg">¥95.19</td>
+  <td class="td-chg na">—</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（欧州）</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">850</span>&nbsp;<span class="local-unit">USD/MT</span></td>
+  <td class="td-usdmt">850.0</td><td class="td-usdkg">0.8500</td><td class="td-jpykg">¥132.65</td>
+  <td class="td-chg na">—</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-817.html" target="_blank" class="item-link">メタノール（中国出荷）</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">3,296</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">483.9</td><td class="td-usdkg">0.4839</td><td class="td-jpykg">¥75.52</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr class="sec-header"><td colspan="8">🔬 BTX・芳香族</td></tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-177.html" target="_blank" class="item-link">トルエン</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">6,934</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,018.0</td><td class="td-usdkg">1.0180</td><td class="td-jpykg">¥158.87</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-1222.html" target="_blank" class="item-link">キシレン</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">6,813</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,000.3</td><td class="td-usdkg">1.0003</td><td class="td-jpykg">¥156.10</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-837.html" target="_blank" class="item-link">アジピン酸</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">9,100</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,336.0</td><td class="td-usdkg">1.3360</td><td class="td-jpykg">¥208.49</td>
+  <td class="td-chg na">—</td>
+  <td class="td-date">2026-05</td>
+</tr><tr class="sec-header"><td colspan="8">C2チェーン</td></tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-856.html" target="_blank" class="item-link">エチレンオキサイド(EO)</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">9,000</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,321.3</td><td class="td-usdkg">1.3213</td><td class="td-jpykg">¥206.20</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-222.html" target="_blank" class="item-link">エチレングリコール(EG)</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">5,155</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">756.8</td><td class="td-usdkg">0.7568</td><td class="td-jpykg">¥118.10</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr class="sec-header"><td colspan="8">C3チェーン</td></tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-438.html" target="_blank" class="item-link">プロピレンオキサイド(PO)</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">10,267</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,507.3</td><td class="td-usdkg">1.5073</td><td class="td-jpykg">¥235.22</td>
+  <td class="td-chg na">—</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-582.html" target="_blank" class="item-link">アセトン</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">7,715</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,132.6</td><td class="td-usdkg">1.1326</td><td class="td-jpykg">¥176.75</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-584.html" target="_blank" class="item-link">アクリル酸</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">10,150</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,490.1</td><td class="td-usdkg">1.4901</td><td class="td-jpykg">¥232.54</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-218.html" target="_blank" class="item-link">酢酸</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">3,193</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">468.8</td><td class="td-usdkg">0.4688</td><td class="td-jpykg">¥73.16</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr class="sec-header"><td colspan="8">🧱 樹脂</td></tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-718.html" target="_blank" class="item-link">PP</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">9,550</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,402.0</td><td class="td-usdkg">1.4020</td><td class="td-jpykg">¥218.79</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr>
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-334.html" target="_blank" class="item-link">LDPE</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">11,533</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt">1,693.2</td><td class="td-usdkg">1.6932</td><td class="td-jpykg">¥264.23</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05</td>
+</tr><tr class="sec-header"><td colspan="8">🇺🇸 NGL（米国）</td></tr><tr>
+  <td class="td-name"><a href="https://www.eia.gov/petroleum/gasprices/" target="_blank" class="item-link">エタン(USGC)</a></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">2.652</span>&nbsp;<span class="local-unit">USD/gal</span></td>
+  <td class="td-usdmt">1,278.7</td><td class="td-usdkg">1.2787</td><td class="td-jpykg">¥199.55</td>
+  <td class="td-chg na">—</td>
+  <td class="td-date">2026-03</td>
+</tr>
+  </tbody>
+</table>
+
+<div class="foot">
+換算: ナフサ密度0.720kg/L ｜ 原油7.33bbl/MT ｜ エタン2.074kg/gal ｜ SunSirs中国出荷価格→当日CNYレートでUSD換算<br>
+本資料は自動収集データです。投資・商業判断への使用は自己責任でお願いします。Sources: 大恵化学 / SunSirs / Methanex / yfinance / EIA
+</div>
+</div>
+
+</body>
+</html>
