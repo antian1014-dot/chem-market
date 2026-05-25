@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>化学品市況 2026年05月24日 21:41</title>
+<title>化学品市況 2026年05月25日 23:54</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;padding:0;background:#fff;color:#111;font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.4}
@@ -75,7 +75,21 @@ thead th:first-child,thead th:nth-child(2){text-align:left}
 
 /* フッター */
 .foot{margin-top:20px;padding-top:12px;border-top:1px solid #e0e0e0;font-size:10px;color:#aaa;line-height:2}
+<style>
+.expand-icon{font-size:9px;color:#bbb;margin-left:5px;display:inline-block;transition:transform .2s}
+.expand-icon.open{transform:rotate(90deg);color:#d9161c}
+.data-row{cursor:pointer}
+.chart-row td{padding:0 !important;background:#fafafa !important}
+.chart-cell{padding:0 !important}
+.chart-wrap{padding:12px 24px 16px;border-top:2px solid #f0f0f0}
+.chart-period-btns{text-align:right;margin-bottom:8px}
+.pbtn{font-size:11px;font-weight:500;padding:3px 12px;margin-left:4px;border:1px solid #ddd;border-radius:3px;background:#fff;color:#666;cursor:pointer}
+.pbtn:hover{background:#f5f5f5}
+.pbtn.active{background:#d9161c;color:#fff;border-color:#d9161c}
+.chart-meta{font-size:11px;color:#888;margin-top:8px;text-align:center}
 </style>
+</style>
+
 </head>
 <body>
 
@@ -83,19 +97,19 @@ thead th:first-child,thead th:nth-child(2){text-align:left}
   <span class="g-logo">化学市況</span>
   <span class="g-sep"></span>
   <span class="g-ttl">Chemical Market Intelligence</span>
-  <span class="g-time">更新　2026年05月24日 21:41</span>
+  <span class="g-time">更新　2026年05月25日 23:54</span>
 </div>
 
-<div class="fx-strip"><span class="fx-item"><span class="fx-k">USD/JPY</span><span class="fx-v">159.155</span><span class="fx-u">円</span></span><span class="fx-item"><span class="fx-k">USD/CNY</span><span class="fx-v">6.794</span><span class="fx-u">元</span></span><span class="fx-item"><span class="fx-k">EUR/USD</span><span class="fx-v">1.160</span><span class="fx-u">USD</span></span><span class="fx-item"><span class="fx-k">USD/KRW</span><span class="fx-v">1,520.530</span><span class="fx-u">₩</span></span><span class="fx-item"><span class="fx-k">USD/SGD</span><span class="fx-v">1.280</span><span class="fx-u">S$</span></span></div>
+<div class="fx-strip"><span class="fx-item"><span class="fx-k">USD/JPY</span><span class="fx-v">158.904</span><span class="fx-u">円</span></span><span class="fx-item"><span class="fx-k">USD/CNY</span><span class="fx-v">6.784</span><span class="fx-u">元</span></span><span class="fx-item"><span class="fx-k">EUR/USD</span><span class="fx-v">1.165</span><span class="fx-u">USD</span></span><span class="fx-item"><span class="fx-k">USD/KRW</span><span class="fx-v">1,513.250</span><span class="fx-u">₩</span></span><span class="fx-item"><span class="fx-k">USD/SGD</span><span class="fx-v">1.277</span><span class="fx-u">S$</span></span></div>
 
 <div class="legend">
   <span>前月比（USD/MT換算）:</span>
   <span class="lup">▲ 赤＝上昇</span>
   <span class="ldn">▼ 青＝下落</span>
     <span style="margin-left:8px;padding-left:8px;border-left:1px solid #ddd">
-      <span style="font-size:10px;font-weight:700;color:#1d4ed8;background:#eff6ff;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe">JPY</span>&nbsp;円（1USD＝159.15円）
+      <span style="font-size:10px;font-weight:700;color:#1d4ed8;background:#eff6ff;padding:1px 5px;border-radius:2px;border:1px solid #bfdbfe">JPY</span>&nbsp;円（1USD＝158.90円）
       &ensp;
-      <span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #fecaca">CNY</span>&nbsp;人民元（1USD＝6.794元）
+      <span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #fecaca">CNY</span>&nbsp;人民元（1USD＝6.784元）
       &ensp;
       <span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #bbf7d0">USD</span>&nbsp;米ドル
     </span>
@@ -115,193 +129,782 @@ thead th:first-child,thead th:nth-child(2){text-align:left}
     </tr>
   </thead>
   <tbody>
-<tr class="sec-header"><td colspan="8">⛽ 上流原料</td></tr><tr>
-  <td class="td-name"><a href="https://www.daikeikagaku.co.jp/naphtha/" target="_blank" class="item-link">国産ナフサ基準価格</a></td>
+<tr class="sec-header"><td colspan="8">⛽ 上流原料</td></tr><tr class="data-row" data-chartid="row-7420527607198631010" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.daikeikagaku.co.jp/naphtha/" target="_blank" class="item-link">国産ナフサ基準価格</a> <span class="expand-icon" id="icon-row-7420527607198631010">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#1d4ed8;background:#eff6ff;padding:1px 5px;border-radius:2px;border:1px solid #1d4ed833">JPY</span>&nbsp;<span class="local-num">66,069</span>&nbsp;<span class="local-unit">円/KL</span></td>
-  <td class="td-usdmt">576.6</td><td class="td-usdkg">0.5766</td><td class="td-jpykg">¥91.77</td>
-  <td class="td-chg up">+27.8(+5.07%)</td>
+  <td class="td-usdmt" title="USD/MT: 577.50">577.5</td><td class="td-usdkg" title="USD/kg: 0.57750">0.5775</td><td class="td-jpykg" title="円/kg: ¥91.77">¥91.77</td>
+  <td class="td-chg up">+27.8(+5.06%)</td>
   <td class="td-date">2026-03</td>
-</tr><tr>
-  <td class="td-name"><a href="https://finance.yahoo.com/quote/CL=F/" target="_blank" class="item-link">WTI原油</a></td>
+</tr>
+<tr id="row-7420527607198631010" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7420527607198631010" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7420527607198631010" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7420527607198631010" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7420527607198631010" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7420527607198631010" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7420527607198631010" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7420527607198631010"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7420527607198631010']={data:{"labels": ["2011-01", "2011-02", "2011-03", "2011-04", "2011-05", "2011-06", "2011-07", "2011-08", "2011-09", "2011-10", "2011-11", "2011-12", "2012-01", "2012-02", "2012-03", "2012-04", "2012-05", "2012-06", "2012-07", "2012-08", "2012-09", "2012-10", "2012-11", "2012-12", "2013-01", "2013-02", "2013-03", "2013-04", "2013-05", "2013-06", "2013-07", "2013-08", "2013-09", "2013-10", "2013-11", "2013-12", "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07", "2014-08", "2014-09", "2014-10", "2014-11", "2014-12", "2015-01", "2015-02", "2015-03", "2015-04", "2015-05", "2015-06", "2015-07", "2015-08", "2015-09", "2015-10", "2015-11", "2015-12", "2016-01", "2016-02", "2016-03", "2016-04", "2016-05", "2016-06", "2016-07", "2016-08", "2016-09", "2016-10", "2016-11", "2016-12", "2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06", "2018-07", "2018-08", "2018-09", "2018-10", "2018-11", "2018-12", "2019-01", "2019-02", "2019-03", "2019-04", "2019-05", "2019-06", "2019-07", "2019-08", "2019-09", "2019-10", "2019-11", "2019-12", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03"], "values": [49202.0, 50257.0, 51923.0, 55522.0, 58400.0, 57299.0, 54425.0, 52420.0, 51824.0, 50715.0, 49541.0, 48777.0, 48700.0, 50866.0, 57306.0, 61950.0, 59705.0, 53700.0, 48329.0, 45524.0, 49482.0, 52753.0, 53852.0, 54675.0, 58017.0, 61392.0, 65528.0, 65869.0, 63805.0, 60731.0, 61033.0, 61609.0, 63115.0, 64465.0, 64754.0, 68251.0, 71100.0, 70456.0, 68313.0, 67516.0, 68051.0, 68211.0, 68658.0, 69187.0, 68982.0, 67996.0, 64638.0, 59905.0, 50077.0, 43320.0, 41357.0, 45161.0, 45820.0, 49848.0, 49004.0, 46174.0, 40783.0, 39118.0, 38357.0, 39265.0, 36948.0, 31364.0, 27737.0, 28368.0, 29463.0, 30992.0, 30199.0, 29378.0, 28192.0, 28829.0, 31399.0, 35148.0, 38248.0, 40076.0, 41365.0, 37971.0, 37531.0, 35801.0, 34126.0, 33273.0, 35129.0, 39366.0, 42553.0, 45803.0, 46930.0, 46865.0, 43958.0, 43675.0, 46697.0, 49750.0, 51151.0, 51777.0, 51707.0, 53580.0, 54812.0, 48427.0, 40108.0, 37737.0, 39731.0, 42233.0, 44203.0, 43695.0, 39214.0, 38264.0, 37209.0, 37021.0, 39135.0, 41249.0, 43745.0, 44024.0, 40799.0, 29191.0, 21983.0, 18554.0, 25049.0, 29471.0, 29941.0, 29865.0, 29578.0, 28603.0, 31799.0, 36433.0, 41034.0, 46113.0, 44739.0, 46330.0, 49894.0, 52526.0, 51992.0, 53684.0, 59447.0, 62342.0, 60596.0, 61014.0, 67794.0, 83988.0, 84816.0, 83426.0, 83648.0, 79096.0, 75737.0, 70908.0, 71706.0, 68774.0, 62979.0, 62248.0, 67416.0, 66420.0, 66265.0, 63510.0, 59389.0, 59039.0, 66200.0, 72209.0, 72287.0, 68238.0, 68481.0, 70191.0, 72976.0, 75535.0, 78035.0, 77685.0, 78273.0, 75993.0, 70700.0, 68979.0, 73029.0, 71359.0, 71996.0, 72036.0, 70279.0, 68215.0, 62755.0, 60841.0, 60800.0, 61464.0, 61294.0, 63045.0, 64170.0, 63663.0, 62568.0, 62893.0, 66069.0], "n": 183, "min": 18554.0, "max": 84816.0, "avg": 53243.5},unit:'円/KL'};
+</script><tr class="data-row" data-chartid="row-8402586569686765933" style="cursor:pointer">
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/CL=F/" target="_blank" class="item-link">WTI原油</a> <span class="expand-icon" id="icon-row-8402586569686765933">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">96.60</span>&nbsp;<span class="local-unit">USD/bbl</span></td>
-  <td class="td-usdmt">708.1</td><td class="td-usdkg">0.7081</td><td class="td-jpykg">¥112.70</td>
-  <td class="td-chg up">+1.9(+0.27%)</td>
-  <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://finance.yahoo.com/quote/BZ=F/" target="_blank" class="item-link">Brent原油</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">103.54</span>&nbsp;<span class="local-unit">USD/bbl</span></td>
-  <td class="td-usdmt">758.9</td><td class="td-usdkg">0.7589</td><td class="td-jpykg">¥120.78</td>
-  <td class="td-chg up">+7.0(+0.93%)</td>
-  <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://finance.yahoo.com/quote/NG=F/" target="_blank" class="item-link">天然ガス(NYMEX)</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">2.907</span>&nbsp;<span class="local-unit">USD/MMBtu</span></td>
+  <td class="td-usdmt" title="USD/MT: 708.10">708.1</td><td class="td-usdkg" title="USD/kg: 0.70810">0.7081</td><td class="td-jpykg" title="円/kg: ¥112.52">¥112.52</td>
+  <td class="td-chg flat">0.0(0.00%)</td>
+  <td class="td-date">2026-05-25</td>
+</tr>
+<tr id="row-8402586569686765933" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-8402586569686765933" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-8402586569686765933" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-8402586569686765933" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-8402586569686765933" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-8402586569686765933" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-8402586569686765933" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-8402586569686765933"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-8402586569686765933']={data:{"labels": ["2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-25"], "values": [105.07, 101.94, 106.42, 102.27, 95.08, 94.81, 95.42, 98.07, 102.18, 101.02, 101.17, 105.42, 108.66, 107.77, 98.26, 96.35, 96.6, 96.6], "n": 18, "min": 94.8, "max": 108.7, "avg": 100.7},unit:'USD/bbl'};
+</script><tr class="data-row" data-chartid="row-1641962271350289723" style="cursor:pointer">
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/BZ=F/" target="_blank" class="item-link">Brent原油</a> <span class="expand-icon" id="icon-row-1641962271350289723">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">100.21</span>&nbsp;<span class="local-unit">USD/bbl</span></td>
+  <td class="td-usdmt" title="USD/MT: 734.50">734.5</td><td class="td-usdkg" title="USD/kg: 0.73450">0.7345</td><td class="td-jpykg" title="円/kg: ¥116.71">¥116.71</td>
+  <td class="td-chg dn">-24.4(-3.22%)</td>
+  <td class="td-date">2026-05-25</td>
+</tr>
+<tr id="row-1641962271350289723" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-1641962271350289723" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-1641962271350289723" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-1641962271350289723" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-1641962271350289723" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-1641962271350289723" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-1641962271350289723" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-1641962271350289723"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-1641962271350289723']={data:{"labels": ["2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-25"], "values": [114.01, 108.17, 114.44, 109.87, 101.27, 100.06, 101.29, 104.21, 107.77, 105.63, 105.72, 109.26, 112.1, 111.28, 105.02, 102.58, 103.54, 100.21], "n": 18, "min": 100.1, "max": 114.4, "avg": 106.5},unit:'USD/bbl'};
+</script><tr class="data-row" data-chartid="row-4160975034991845046" style="cursor:pointer">
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/NG=F/" target="_blank" class="item-link">天然ガス(NYMEX)</a> <span class="expand-icon" id="icon-row-4160975034991845046">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">3.021</span>&nbsp;<span class="local-unit">USD/MMBtu</span></td>
   <td class="td-usdmt na">—</td><td class="td-usdkg na">—</td><td class="td-jpykg na">—</td>
   <td class="td-chg na">—</td>
-  <td class="td-date">2026-05-22</td>
-</tr><tr class="sec-header"><td colspan="8">🧪 メタノール</td></tr><tr>
-  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（アジア太平洋）</a></td>
+  <td class="td-date">2026-05-25</td>
+</tr>
+<tr id="row-4160975034991845046" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-4160975034991845046" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-4160975034991845046" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-4160975034991845046" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-4160975034991845046" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-4160975034991845046" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-4160975034991845046" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-4160975034991845046"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-4160975034991845046']={data:{},unit:'USD/MT'};
+</script><tr class="sec-header"><td colspan="8">🧪 メタノール</td></tr><tr class="data-row" data-chartid="row-4308555292270039593" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（アジア太平洋）</a> <span class="expand-icon" id="icon-row-4308555292270039593">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">740</span>&nbsp;<span class="local-unit">USD/MT</span></td>
-  <td class="td-usdmt">740.0</td><td class="td-usdkg">0.7400</td><td class="td-jpykg">¥117.77</td>
+  <td class="td-usdmt" title="USD/MT: 740.00">740.0</td><td class="td-usdkg" title="USD/kg: 0.74000">0.7400</td><td class="td-jpykg" title="円/kg: ¥117.59">¥117.59</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（中国）</a></td>
+</tr>
+<tr id="row-4308555292270039593" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-4308555292270039593" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-4308555292270039593" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-4308555292270039593" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-4308555292270039593" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-4308555292270039593" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-4308555292270039593" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-4308555292270039593"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-4308555292270039593']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-5578207481222751592" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（中国）</a> <span class="expand-icon" id="icon-row-5578207481222751592">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">610</span>&nbsp;<span class="local-unit">USD/MT</span></td>
-  <td class="td-usdmt">610.0</td><td class="td-usdkg">0.6100</td><td class="td-jpykg">¥97.08</td>
+  <td class="td-usdmt" title="USD/MT: 610.00">610.0</td><td class="td-usdkg" title="USD/kg: 0.61000">0.6100</td><td class="td-jpykg" title="円/kg: ¥96.93">¥96.93</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（欧州）</a></td>
+</tr>
+<tr id="row-5578207481222751592" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-5578207481222751592" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-5578207481222751592" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-5578207481222751592" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-5578207481222751592" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-5578207481222751592" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-5578207481222751592" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-5578207481222751592"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-5578207481222751592']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-3766391992363135752" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.methanex.com/our-products/about-methanol/pricing/" target="_blank" class="item-link">メタノール公示（欧州）</a> <span class="expand-icon" id="icon-row-3766391992363135752">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">850</span>&nbsp;<span class="local-unit">USD/MT</span></td>
-  <td class="td-usdmt">850.0</td><td class="td-usdkg">0.8500</td><td class="td-jpykg">¥135.28</td>
+  <td class="td-usdmt" title="USD/MT: 850.00">850.0</td><td class="td-usdkg" title="USD/kg: 0.85000">0.8500</td><td class="td-jpykg" title="円/kg: ¥135.07">¥135.07</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-817.html" target="_blank" class="item-link">メタノール（中国出荷）</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">3,204</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">471.6</td><td class="td-usdkg">0.4716</td><td class="td-jpykg">¥75.06</td>
-  <td class="td-chg dn">-13.5(-2.78%)</td>
+</tr>
+<tr id="row-3766391992363135752" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-3766391992363135752" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-3766391992363135752" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-3766391992363135752" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-3766391992363135752" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-3766391992363135752" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-3766391992363135752" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-3766391992363135752"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-3766391992363135752']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-2131858019617698765" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-817.html" target="_blank" class="item-link">メタノール（中国出荷）</a> <span class="expand-icon" id="icon-row-2131858019617698765">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">3,212</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt" title="USD/MT: 473.40">473.4</td><td class="td-usdkg" title="USD/kg: 0.47340">0.4734</td><td class="td-jpykg" title="円/kg: ¥75.23">¥75.23</td>
+  <td class="td-chg dn">-12.4(-2.55%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr class="sec-header"><td colspan="8">🔬 BTX・芳香族</td></tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-177.html" target="_blank" class="item-link">トルエン</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">6,991</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,029.0</td><td class="td-usdkg">1.0290</td><td class="td-jpykg">¥163.77</td>
-  <td class="td-chg up">+8.3(+0.81%)</td>
+</tr>
+<tr id="row-2131858019617698765" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-2131858019617698765" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-2131858019617698765" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-2131858019617698765" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-2131858019617698765" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-2131858019617698765" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-2131858019617698765" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-2131858019617698765"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-2131858019617698765']={data:{"labels": ["2026-04", "2026-05"], "values": [3295.83, 3211.67], "n": 2, "min": 3211.7, "max": 3295.8, "avg": 3253.8},unit:'CNY/ton'};
+</script><tr class="sec-header"><td colspan="8">🔬 BTX・芳香族</td></tr><tr class="data-row" data-chartid="row-5108618294440589469" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-177.html" target="_blank" class="item-link">トルエン</a> <span class="expand-icon" id="icon-row-5108618294440589469">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">7,001</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt" title="USD/MT: 1,032.00">1,032.0</td><td class="td-usdkg" title="USD/kg: 1.03200">1.0320</td><td class="td-jpykg" title="円/kg: ¥163.99">¥163.99</td>
+  <td class="td-chg up">+9.9(+0.97%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-1222.html" target="_blank" class="item-link">キシレン</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">6,768</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">996.2</td><td class="td-usdkg">0.9962</td><td class="td-jpykg">¥158.55</td>
-  <td class="td-chg dn">-6.6(-0.66%)</td>
+</tr>
+<tr id="row-5108618294440589469" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-5108618294440589469" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-5108618294440589469" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-5108618294440589469" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-5108618294440589469" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-5108618294440589469" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-5108618294440589469" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-5108618294440589469"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-5108618294440589469']={data:{"labels": ["2026-04", "2026-05"], "values": [6934.33, 7001.0], "n": 2, "min": 6934.3, "max": 7001.0, "avg": 6967.7},unit:'CNY/ton'};
+</script><tr class="data-row" data-chartid="row-155341414901422377" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-1222.html" target="_blank" class="item-link">キシレン</a> <span class="expand-icon" id="icon-row-155341414901422377">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">6,796</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt" title="USD/MT: 1,001.70">1,001.7</td><td class="td-usdkg" title="USD/kg: 1.00170">1.0017</td><td class="td-jpykg" title="円/kg: ¥159.17">¥159.17</td>
+  <td class="td-chg dn">-2.6(-0.26%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-837.html" target="_blank" class="item-link">アジピン酸</a></td>
+</tr>
+<tr id="row-155341414901422377" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-155341414901422377" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-155341414901422377" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-155341414901422377" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-155341414901422377" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-155341414901422377" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-155341414901422377" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-155341414901422377"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-155341414901422377']={data:{"labels": ["2026-04", "2026-05"], "values": [6813.25, 6795.75], "n": 2, "min": 6795.8, "max": 6813.2, "avg": 6804.5},unit:'CNY/ton'};
+</script><tr class="data-row" data-chartid="row-7844056283085924449" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-837.html" target="_blank" class="item-link">アジピン酸</a> <span class="expand-icon" id="icon-row-7844056283085924449">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">9,233</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,359.0</td><td class="td-usdkg">1.3590</td><td class="td-jpykg">¥216.29</td>
+  <td class="td-usdmt" title="USD/MT: 1,361.00">1,361.0</td><td class="td-usdkg" title="USD/kg: 1.36100">1.3610</td><td class="td-jpykg" title="円/kg: ¥216.27">¥216.27</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05</td>
-</tr><tr class="sec-header"><td colspan="8">C2チェーン</td></tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-856.html" target="_blank" class="item-link">エチレンオキサイド(EO)</a></td>
+</tr>
+<tr id="row-7844056283085924449" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7844056283085924449" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7844056283085924449" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7844056283085924449" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7844056283085924449" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7844056283085924449" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7844056283085924449" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7844056283085924449"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7844056283085924449']={data:{"labels": ["2026-05"], "values": [9233.33], "n": 1, "min": 9233.3, "max": 9233.3, "avg": 9233.3},unit:'CNY/ton'};
+</script><tr class="sec-header"><td colspan="8">C2チェーン</td></tr><tr class="data-row" data-chartid="row-7291214604825740042" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-856.html" target="_blank" class="item-link">エチレンオキサイド(EO)</a> <span class="expand-icon" id="icon-row-7291214604825740042">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">8,200</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,206.9</td><td class="td-usdkg">1.2069</td><td class="td-jpykg">¥192.08</td>
-  <td class="td-chg dn">-117.8(-8.89%)</td>
+  <td class="td-usdmt" title="USD/MT: 1,208.70">1,208.7</td><td class="td-usdkg" title="USD/kg: 1.20870">1.2087</td><td class="td-jpykg" title="円/kg: ¥192.07">¥192.07</td>
+  <td class="td-chg dn">-117.9(-8.89%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-222.html" target="_blank" class="item-link">エチレングリコール(EG)</a></td>
+</tr>
+<tr id="row-7291214604825740042" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7291214604825740042" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7291214604825740042" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7291214604825740042" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7291214604825740042" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7291214604825740042" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7291214604825740042" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7291214604825740042"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7291214604825740042']={data:{"labels": ["2026-04", "2026-05"], "values": [9000.0, 8200.0], "n": 2, "min": 8200.0, "max": 9000.0, "avg": 8600.0},unit:'CNY/ton'};
+</script><tr class="data-row" data-chartid="row-5184784944390349337" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-222.html" target="_blank" class="item-link">エチレングリコール(EG)</a> <span class="expand-icon" id="icon-row-5184784944390349337">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">5,008</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">737.2</td><td class="td-usdkg">0.7372</td><td class="td-jpykg">¥117.33</td>
-  <td class="td-chg dn">-21.6(-2.85%)</td>
+  <td class="td-usdmt" title="USD/MT: 738.20">738.2</td><td class="td-usdkg" title="USD/kg: 0.73820">0.7382</td><td class="td-jpykg" title="円/kg: ¥117.30">¥117.30</td>
+  <td class="td-chg dn">-21.7(-2.86%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr class="sec-header"><td colspan="8">C3チェーン</td></tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-438.html" target="_blank" class="item-link">プロピレンオキサイド(PO)</a></td>
+</tr>
+<tr id="row-5184784944390349337" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-5184784944390349337" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-5184784944390349337" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-5184784944390349337" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-5184784944390349337" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-5184784944390349337" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-5184784944390349337" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-5184784944390349337"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-5184784944390349337']={data:{"labels": ["2026-04", "2026-05"], "values": [5155.0, 5008.33], "n": 2, "min": 5008.3, "max": 5155.0, "avg": 5081.7},unit:'CNY/ton'};
+</script><tr class="sec-header"><td colspan="8">C3チェーン</td></tr><tr class="data-row" data-chartid="row-6290703294888510107" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-438.html" target="_blank" class="item-link">プロピレンオキサイド(PO)</a> <span class="expand-icon" id="icon-row-6290703294888510107">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">9,000</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,324.7</td><td class="td-usdkg">1.3247</td><td class="td-jpykg">¥210.83</td>
+  <td class="td-usdmt" title="USD/MT: 1,326.60">1,326.6</td><td class="td-usdkg" title="USD/kg: 1.32660">1.3266</td><td class="td-jpykg" title="円/kg: ¥210.80">¥210.80</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-582.html" target="_blank" class="item-link">アセトン</a></td>
+</tr>
+<tr id="row-6290703294888510107" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-6290703294888510107" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-6290703294888510107" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-6290703294888510107" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-6290703294888510107" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-6290703294888510107" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-6290703294888510107" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-6290703294888510107"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-6290703294888510107']={data:{"labels": ["2026-05"], "values": [9000.0], "n": 1, "min": 9000.0, "max": 9000.0, "avg": 9000.0},unit:'CNY/ton'};
+</script><tr class="data-row" data-chartid="row-7694972965274519736" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-582.html" target="_blank" class="item-link">アセトン</a> <span class="expand-icon" id="icon-row-7694972965274519736">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">7,650</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,126.0</td><td class="td-usdkg">1.1260</td><td class="td-jpykg">¥179.21</td>
-  <td class="td-chg dn">-9.6(-0.85%)</td>
+  <td class="td-usdmt" title="USD/MT: 1,127.60">1,127.6</td><td class="td-usdkg" title="USD/kg: 1.12760">1.1276</td><td class="td-jpykg" title="円/kg: ¥179.18">¥179.18</td>
+  <td class="td-chg dn">-9.6(-0.84%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-584.html" target="_blank" class="item-link">アクリル酸</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">8,717</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,283.0</td><td class="td-usdkg">1.2830</td><td class="td-jpykg">¥204.20</td>
-  <td class="td-chg dn">-211.0(-14.12%)</td>
+</tr>
+<tr id="row-7694972965274519736" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7694972965274519736" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7694972965274519736" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7694972965274519736" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7694972965274519736" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7694972965274519736" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7694972965274519736" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7694972965274519736"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7694972965274519736']={data:{"labels": ["2026-04", "2026-05"], "values": [7715.0, 7650.0], "n": 2, "min": 7650.0, "max": 7715.0, "avg": 7682.5},unit:'CNY/ton'};
+</script><tr class="data-row" data-chartid="row-5799236356538072999" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-584.html" target="_blank" class="item-link">アクリル酸</a> <span class="expand-icon" id="icon-row-5799236356538072999">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">8,650</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt" title="USD/MT: 1,275.00">1,275.0</td><td class="td-usdkg" title="USD/kg: 1.27500">1.2750</td><td class="td-jpykg" title="円/kg: ¥202.60">¥202.60</td>
+  <td class="td-chg dn">-221.1(-14.78%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-218.html" target="_blank" class="item-link">酢酸</a></td>
+</tr>
+<tr id="row-5799236356538072999" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-5799236356538072999" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-5799236356538072999" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-5799236356538072999" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-5799236356538072999" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-5799236356538072999" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-5799236356538072999" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-5799236356538072999"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-5799236356538072999']={data:{"labels": ["2026-04", "2026-05"], "values": [10150.0, 8650.0], "n": 2, "min": 8650.0, "max": 10150.0, "avg": 9400.0},unit:'CNY/ton'};
+</script><tr class="data-row" data-chartid="row-4562961886283606814" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-218.html" target="_blank" class="item-link">酢酸</a> <span class="expand-icon" id="icon-row-4562961886283606814">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">3,093</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">455.3</td><td class="td-usdkg">0.4553</td><td class="td-jpykg">¥72.46</td>
-  <td class="td-chg dn">-14.7(-3.13%)</td>
+  <td class="td-usdmt" title="USD/MT: 456.00">456.0</td><td class="td-usdkg" title="USD/kg: 0.45600">0.4560</td><td class="td-jpykg" title="円/kg: ¥72.46">¥72.46</td>
+  <td class="td-chg dn">-14.7(-3.12%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr class="sec-header"><td colspan="8">🧱 樹脂</td></tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-718.html" target="_blank" class="item-link">PP</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">9,670</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,423.3</td><td class="td-usdkg">1.4233</td><td class="td-jpykg">¥226.53</td>
-  <td class="td-chg up">+17.6(+1.25%)</td>
+</tr>
+<tr id="row-4562961886283606814" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-4562961886283606814" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-4562961886283606814" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-4562961886283606814" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-4562961886283606814" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-4562961886283606814" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-4562961886283606814" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-4562961886283606814"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-4562961886283606814']={data:{"labels": ["2026-04", "2026-05"], "values": [3193.33, 3093.33], "n": 2, "min": 3093.3, "max": 3193.3, "avg": 3143.3},unit:'CNY/ton'};
+</script><tr class="sec-header"><td colspan="8">🧱 樹脂</td></tr><tr class="data-row" data-chartid="row-1297943767797281988" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-718.html" target="_blank" class="item-link">PP</a> <span class="expand-icon" id="icon-row-1297943767797281988">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">9,737</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt" title="USD/MT: 1,435.20">1,435.2</td><td class="td-usdkg" title="USD/kg: 1.43520">1.4352</td><td class="td-jpykg" title="円/kg: ¥228.06">¥228.06</td>
+  <td class="td-chg up">+27.5(+1.95%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-334.html" target="_blank" class="item-link">LDPE</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">11,283</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,660.8</td><td class="td-usdkg">1.6608</td><td class="td-jpykg">¥264.32</td>
-  <td class="td-chg dn">-36.8(-2.17%)</td>
+</tr>
+<tr id="row-1297943767797281988" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-1297943767797281988" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-1297943767797281988" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-1297943767797281988" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-1297943767797281988" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-1297943767797281988" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-1297943767797281988" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-1297943767797281988"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-1297943767797281988']={data:{"labels": ["2026-04", "2026-05"], "values": [9550.0, 9736.67], "n": 2, "min": 9550.0, "max": 9736.7, "avg": 9643.3},unit:'CNY/ton'};
+</script><tr class="data-row" data-chartid="row-7177864151426333660" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.sunsirs.com/uk/prodetail-334.html" target="_blank" class="item-link">LDPE</a> <span class="expand-icon" id="icon-row-7177864151426333660">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">11,217</span>&nbsp;<span class="local-unit">元/ton</span></td>
+  <td class="td-usdmt" title="USD/MT: 1,653.40">1,653.4</td><td class="td-usdkg" title="USD/kg: 1.65340">1.6534</td><td class="td-jpykg" title="円/kg: ¥262.73">¥262.73</td>
+  <td class="td-chg dn">-46.6(-2.74%)</td>
   <td class="td-date">2026-05</td>
-</tr><tr class="sec-header"><td colspan="8">🇺🇸 NGL（米国）</td></tr><tr>
-  <td class="td-name"><a href="https://www.eia.gov/petroleum/gasprices/" target="_blank" class="item-link">エタン(USGC)</a></td>
+</tr>
+<tr id="row-7177864151426333660" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7177864151426333660" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7177864151426333660" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7177864151426333660" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7177864151426333660" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7177864151426333660" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7177864151426333660" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7177864151426333660"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7177864151426333660']={data:{"labels": ["2026-04", "2026-05"], "values": [11533.33, 11216.67], "n": 2, "min": 11216.7, "max": 11533.3, "avg": 11375.0},unit:'CNY/ton'};
+</script><tr class="sec-header"><td colspan="8">🇺🇸 NGL（米国）</td></tr><tr class="data-row" data-chartid="row-5607935759644916697" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.eia.gov/petroleum/gasprices/" target="_blank" class="item-link">エタン(USGC)</a> <span class="expand-icon" id="icon-row-5607935759644916697">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">2.652</span>&nbsp;<span class="local-unit">USD/gal</span></td>
-  <td class="td-usdmt">1,278.7</td><td class="td-usdkg">1.2787</td><td class="td-jpykg">¥203.51</td>
+  <td class="td-usdmt" title="USD/MT: 1,278.70">1,278.7</td><td class="td-usdkg" title="USD/kg: 1.27870">1.2787</td><td class="td-jpykg" title="円/kg: ¥203.19">¥203.19</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-03</td>
-</tr><tr class="sec-header"><td colspan="8">🧫 溶剤・機能性化学品</td></tr><tr>
-  <td class="td-name"><a href="https://www.100ppi.com/mprice/plist-1-2449-1.html" target="_blank" class="item-link">NMP</a></td>
+</tr>
+<tr id="row-5607935759644916697" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-5607935759644916697" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-5607935759644916697" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-5607935759644916697" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-5607935759644916697" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-5607935759644916697" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-5607935759644916697" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-5607935759644916697"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-5607935759644916697']={data:{},unit:'USD/MT'};
+</script><tr class="sec-header"><td colspan="8">🧫 溶剤・機能性化学品</td></tr><tr class="data-row" data-chartid="row-7241102819283279582" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.100ppi.com/mprice/plist-1-2449-1.html" target="_blank" class="item-link">NMP</a> <span class="expand-icon" id="icon-row-7241102819283279582">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">10,800</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,589.6</td><td class="td-usdkg">1.5896</td><td class="td-jpykg">¥252.99</td>
+  <td class="td-usdmt" title="USD/MT: 1,591.90">1,591.9</td><td class="td-usdkg" title="USD/kg: 1.59190">1.5919</td><td class="td-jpykg" title="円/kg: ¥252.96">¥252.96</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05-24</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.100ppi.com/mprice/plist-1-9720-1.html" target="_blank" class="item-link">DMAc</a></td>
+</tr>
+<tr id="row-7241102819283279582" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7241102819283279582" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7241102819283279582" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7241102819283279582" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7241102819283279582" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7241102819283279582" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7241102819283279582" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7241102819283279582"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7241102819283279582']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-7344003209537658520" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.100ppi.com/mprice/plist-1-9720-1.html" target="_blank" class="item-link">DMAc</a> <span class="expand-icon" id="icon-row-7344003209537658520">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">7,200</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,059.8</td><td class="td-usdkg">1.0598</td><td class="td-jpykg">¥168.67</td>
+  <td class="td-usdmt" title="USD/MT: 1,061.30">1,061.3</td><td class="td-usdkg" title="USD/kg: 1.06130">1.0613</td><td class="td-jpykg" title="円/kg: ¥168.64">¥168.64</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05-24</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.100ppi.com/mprice/plist-1-1287-1.html" target="_blank" class="item-link">BDO</a></td>
+</tr>
+<tr id="row-7344003209537658520" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7344003209537658520" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7344003209537658520" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7344003209537658520" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7344003209537658520" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7344003209537658520" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7344003209537658520" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7344003209537658520"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7344003209537658520']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-8012901674965876432" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.100ppi.com/mprice/plist-1-1287-1.html" target="_blank" class="item-link">BDO</a> <span class="expand-icon" id="icon-row-8012901674965876432">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#b91c1c;background:#fef2f2;padding:1px 5px;border-radius:2px;border:1px solid #b91c1c33">CNY</span>&nbsp;<span class="local-num">7,300</span>&nbsp;<span class="local-unit">元/ton</span></td>
-  <td class="td-usdmt">1,074.5</td><td class="td-usdkg">1.0745</td><td class="td-jpykg">¥171.01</td>
+  <td class="td-usdmt" title="USD/MT: 1,076.00">1,076.0</td><td class="td-usdkg" title="USD/kg: 1.07600">1.0760</td><td class="td-jpykg" title="円/kg: ¥170.98">¥170.98</td>
   <td class="td-chg na">—</td>
   <td class="td-date">2026-05-24</td>
-</tr><tr class="sec-header"><td colspan="8">🔩 非鉄金属</td></tr><tr>
-  <td class="td-name"><a href="https://finance.yahoo.com/quote/HG=F/" target="_blank" class="item-link">銅(COMEX)</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">6.34</span>&nbsp;<span class="local-unit">USD/lb</span></td>
-  <td class="td-usdmt">13,981.7</td><td class="td-usdkg">13.9817</td><td class="td-jpykg">¥2,225.26</td>
-  <td class="td-chg up">+187.4(+1.36%)</td>
-  <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Cu_cash" target="_blank" class="item-link">銅(LME)</a></td>
+</tr>
+<tr id="row-8012901674965876432" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-8012901674965876432" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-8012901674965876432" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-8012901674965876432" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-8012901674965876432" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-8012901674965876432" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-8012901674965876432" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-8012901674965876432"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-8012901674965876432']={data:{},unit:'USD/MT'};
+</script><tr class="sec-header"><td colspan="8">🔩 非鉄金属</td></tr><tr class="data-row" data-chartid="row-8042545505031406990" style="cursor:pointer">
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/HG=F/" target="_blank" class="item-link">銅(COMEX)</a> <span class="expand-icon" id="icon-row-8042545505031406990">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">6.38</span>&nbsp;<span class="local-unit">USD/lb</span></td>
+  <td class="td-usdmt" title="USD/MT: 14,063.30">14,063.3</td><td class="td-usdkg" title="USD/kg: 14.06330">14.0633</td><td class="td-jpykg" title="円/kg: ¥2,234.71">¥2,234.71</td>
+  <td class="td-chg up">+81.6(+0.58%)</td>
+  <td class="td-date">2026-05-25</td>
+</tr>
+<tr id="row-8042545505031406990" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-8042545505031406990" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-8042545505031406990" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-8042545505031406990" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-8042545505031406990" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-8042545505031406990" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-8042545505031406990" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-8042545505031406990"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-8042545505031406990']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-2682424346989428223" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Cu_cash" target="_blank" class="item-link">銅(LME)</a> <span class="expand-icon" id="icon-row-2682424346989428223">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">13,545.00</span>&nbsp;<span class="local-unit">USD/MT</span></td>
-  <td class="td-usdmt">13,545.0</td><td class="td-usdkg">13.5450</td><td class="td-jpykg">¥2,155.75</td>
+  <td class="td-usdmt" title="USD/MT: 13,545.00">13,545.0</td><td class="td-usdkg" title="USD/kg: 13.54500">13.5450</td><td class="td-jpykg" title="円/kg: ¥2,152.35">¥2,152.35</td>
   <td class="td-chg up">+118.0(+0.88%)</td>
   <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://finance.yahoo.com/quote/GC=F/" target="_blank" class="item-link">金(COMEX)</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">4,521.000</span>&nbsp;<span class="local-unit">USD/troy oz</span></td>
-  <td class="td-usdmt">145,353.3</td><td class="td-usdkg">145.3533</td><td class="td-jpykg">¥23,133.70</td>
-  <td class="td-chg dn">-604.4(-0.41%)</td>
-  <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://finance.yahoo.com/quote/SI=F/" target="_blank" class="item-link">銀(COMEX)</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">75.893</span>&nbsp;<span class="local-unit">USD/troy oz</span></td>
-  <td class="td-usdmt">2,440.0</td><td class="td-usdkg">2.4400</td><td class="td-jpykg">¥388.34</td>
-  <td class="td-chg dn">-16.8(-0.68%)</td>
-  <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://finance.yahoo.com/quote/PA=F/" target="_blank" class="item-link">パラジウム</a></td>
-  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">1,358.000</span>&nbsp;<span class="local-unit">USD/troy oz</span></td>
-  <td class="td-usdmt">43,660.7</td><td class="td-usdkg">43.6607</td><td class="td-jpykg">¥6,948.82</td>
-  <td class="td-chg dn">-816.6(-1.84%)</td>
-  <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash" target="_blank" class="item-link">アルミ(LME)</a></td>
+</tr>
+<tr id="row-2682424346989428223" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-2682424346989428223" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-2682424346989428223" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-2682424346989428223" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-2682424346989428223" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-2682424346989428223" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-2682424346989428223" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-2682424346989428223"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-2682424346989428223']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-4694362930356694940" style="cursor:pointer">
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/GC=F/" target="_blank" class="item-link">金(COMEX)</a> <span class="expand-icon" id="icon-row-4694362930356694940">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">4,523.200</span>&nbsp;<span class="local-unit">USD/troy oz</span></td>
+  <td class="td-usdmt" title="USD/MT: 145,424.10">145,424.1</td><td class="td-usdkg" title="USD/kg: 145.42410">145.4241</td><td class="td-jpykg" title="円/kg: ¥23,108.47">¥23,108.47</td>
+  <td class="td-chg up">+70.8(+0.05%)</td>
+  <td class="td-date">2026-05-25</td>
+</tr>
+<tr id="row-4694362930356694940" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-4694362930356694940" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-4694362930356694940" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-4694362930356694940" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-4694362930356694940" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-4694362930356694940" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-4694362930356694940" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-4694362930356694940"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-4694362930356694940']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-3833841522324716791" style="cursor:pointer">
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/SI=F/" target="_blank" class="item-link">銀(COMEX)</a> <span class="expand-icon" id="icon-row-3833841522324716791">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">76.199</span>&nbsp;<span class="local-unit">USD/troy oz</span></td>
+  <td class="td-usdmt" title="USD/MT: 2,449.90">2,449.9</td><td class="td-usdkg" title="USD/kg: 2.44990">2.4499</td><td class="td-jpykg" title="円/kg: ¥389.30">¥389.30</td>
+  <td class="td-chg up">+9.9(+0.41%)</td>
+  <td class="td-date">2026-05-25</td>
+</tr>
+<tr id="row-3833841522324716791" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-3833841522324716791" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-3833841522324716791" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-3833841522324716791" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-3833841522324716791" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-3833841522324716791" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-3833841522324716791" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-3833841522324716791"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-3833841522324716791']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-7983078877074421223" style="cursor:pointer">
+  <td class="td-name"><a href="https://finance.yahoo.com/quote/PA=F/" target="_blank" class="item-link">パラジウム</a> <span class="expand-icon" id="icon-row-7983078877074421223">▶</span></td>
+  <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">1,360.300</span>&nbsp;<span class="local-unit">USD/troy oz</span></td>
+  <td class="td-usdmt" title="USD/MT: 43,734.60">43,734.6</td><td class="td-usdkg" title="USD/kg: 43.73460">43.7346</td><td class="td-jpykg" title="円/kg: ¥6,949.60">¥6,949.60</td>
+  <td class="td-chg up">+73.9(+0.17%)</td>
+  <td class="td-date">2026-05-25</td>
+</tr>
+<tr id="row-7983078877074421223" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-7983078877074421223" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-7983078877074421223" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-7983078877074421223" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-7983078877074421223" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-7983078877074421223" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-7983078877074421223" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-7983078877074421223"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-7983078877074421223']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-8131044883006016839" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash" target="_blank" class="item-link">アルミ(LME)</a> <span class="expand-icon" id="icon-row-8131044883006016839">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">3,706.00</span>&nbsp;<span class="local-unit">USD/MT</span></td>
-  <td class="td-usdmt">3,706.0</td><td class="td-usdkg">3.7060</td><td class="td-jpykg">¥589.83</td>
+  <td class="td-usdmt" title="USD/MT: 3,706.00">3,706.0</td><td class="td-usdkg" title="USD/kg: 3.70600">3.7060</td><td class="td-jpykg" title="円/kg: ¥588.90">¥588.90</td>
   <td class="td-chg dn">-14.0(-0.38%)</td>
   <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Ni_cash" target="_blank" class="item-link">ニッケル(LME)</a></td>
+</tr>
+<tr id="row-8131044883006016839" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-8131044883006016839" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-8131044883006016839" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-8131044883006016839" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-8131044883006016839" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-8131044883006016839" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-8131044883006016839" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-8131044883006016839"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-8131044883006016839']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-3777020626945407490" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Ni_cash" target="_blank" class="item-link">ニッケル(LME)</a> <span class="expand-icon" id="icon-row-3777020626945407490">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">18,550.00</span>&nbsp;<span class="local-unit">USD/MT</span></td>
-  <td class="td-usdmt">18,550.0</td><td class="td-usdkg">18.5500</td><td class="td-jpykg">¥2,952.33</td>
+  <td class="td-usdmt" title="USD/MT: 18,550.00">18,550.0</td><td class="td-usdkg" title="USD/kg: 18.55000">18.5500</td><td class="td-jpykg" title="円/kg: ¥2,947.67">¥2,947.67</td>
   <td class="td-chg up">+10.0(+0.05%)</td>
   <td class="td-date">2026-05-22</td>
-</tr><tr>
-  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Sn_cash" target="_blank" class="item-link">錫(LME)</a></td>
+</tr>
+<tr id="row-3777020626945407490" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-3777020626945407490" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-3777020626945407490" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-3777020626945407490" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-3777020626945407490" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-3777020626945407490" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-3777020626945407490" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-3777020626945407490"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-3777020626945407490']={data:{},unit:'USD/MT'};
+</script><tr class="data-row" data-chartid="row-8971970814777127258" style="cursor:pointer">
+  <td class="td-name"><a href="https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Sn_cash" target="_blank" class="item-link">錫(LME)</a> <span class="expand-icon" id="icon-row-8971970814777127258">▶</span></td>
   <td class="td-local"><span style="font-size:10px;font-weight:700;color:#15803d;background:#f0fdf4;padding:1px 5px;border-radius:2px;border:1px solid #15803d33">USD</span>&nbsp;<span class="local-num">53,900.00</span>&nbsp;<span class="local-unit">USD/MT</span></td>
-  <td class="td-usdmt">53,900.0</td><td class="td-usdkg">53.9000</td><td class="td-jpykg">¥8,578.45</td>
+  <td class="td-usdmt" title="USD/MT: 53,900.00">53,900.0</td><td class="td-usdkg" title="USD/kg: 53.90000">53.9000</td><td class="td-jpykg" title="円/kg: ¥8,564.93">¥8,564.93</td>
   <td class="td-chg up">+1,100.0(+2.08%)</td>
   <td class="td-date">2026-05-22</td>
 </tr>
+<tr id="row-8971970814777127258" class="chart-row" style="display:none">
+  <td colspan="7" class="chart-cell">
+    <div class="chart-wrap">
+      <div class="chart-period-btns">
+        <button class="pbtn" data-row="row-8971970814777127258" data-yr="1">1年</button>
+        <button class="pbtn" data-row="row-8971970814777127258" data-yr="3">3年</button>
+        <button class="pbtn" data-row="row-8971970814777127258" data-yr="5">5年</button>
+        <button class="pbtn" data-row="row-8971970814777127258" data-yr="10">10年</button>
+        <button class="pbtn active" data-row="row-8971970814777127258" data-yr="99">全期間</button>
+      </div>
+      <canvas id="canvas-row-8971970814777127258" height="150"></canvas>
+      <div class="chart-meta" id="meta-row-8971970814777127258"></div>
+    </div>
+  </td>
+</tr>
+<script>
+window._CD=window._CD||{};
+window._CD['row-8971970814777127258']={data:{},unit:'USD/MT'};
+</script>
   </tbody>
 </table>
 
@@ -312,4 +915,7 @@ thead th:first-child,thead th:nth-child(2){text-align:left}
 </div>
 
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="chart.js"></script>
 </html>
