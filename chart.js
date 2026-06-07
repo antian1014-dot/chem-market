@@ -44,14 +44,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function filterByMonths(labels, values, months) {
   if (months >= 99999) return {labels: labels.slice(), values: values.slice()};
+
+  // データ頻度を判定（YYYY-MM = 月次 / YYYY-MM-DD = 日次）
+  var isMonthly = labels.length > 0 && labels[0].length === 7;
+
   var now = new Date();
   now.setMonth(now.getMonth() - months);
-  var cutoff = now.toISOString().slice(0, 7);  // YYYY-MM
+  var cutoff = now.toISOString().slice(0, 7);
+
   var fl = [], fv = [];
   labels.forEach(function(l, i) {
     if (l.slice(0, 7) >= cutoff) { fl.push(l); fv.push(values[i]); }
   });
-  return fl.length > 0 ? {labels: fl, values: fv} : {labels: labels.slice(), values: values.slice()};
+
+  // 月次データは最低6点確保（少なすぎると直線になるため）
+  var minPoints = isMonthly ? 6 : 4;
+  if (fl.length < minPoints) {
+    var take = Math.min(Math.max(months * (isMonthly ? 3 : 1), minPoints), labels.length);
+    return {labels: labels.slice(-take), values: values.slice(-take)};
+  }
+
+  return {labels: fl, values: fv};
 }
 
 function metaText(values, unit) {
@@ -76,7 +89,16 @@ function initChart(rowId, months) {
   }
   var d = info.data;
   var filtered = filterByMonths(d.labels, d.values, months || 99999);
-  if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
+
+  // データが3点未満の場合は全期間表示にフォールバック
+  if (filtered.values.length < 3) {
+    filtered = {labels: d.labels.slice(), values: d.values.slice()};
+    if (metaEl) {
+      metaEl.textContent = metaText(filtered.values, info.unit);
+    }
+  } else {
+    if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
+  }
 
   window._CI[rowId] = new Chart(canvas.getContext('2d'), {
     type: 'line',
@@ -130,9 +152,17 @@ function updatePeriod(rowId, months) {
   if (!inst || !info || !info.data) return;
   var d = info.data;
   var filtered = filterByMonths(d.labels, d.values, months);
+
+  // データが3点未満なら全期間にフォールバック
+  if (filtered.values.length < 3) {
+    filtered = {labels: d.labels.slice(), values: d.values.slice()};
+    if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
+  } else {
+    if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
+  }
+
   inst.data.labels           = filtered.labels;
   inst.data.datasets[0].data = filtered.values;
   inst.data.datasets[0].pointRadius = filtered.values.length > 60 ? 0 : 3;
   inst.update();
-  if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
 }
