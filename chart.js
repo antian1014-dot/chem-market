@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 行クリック → チャート開閉
   document.addEventListener('click', function(e) {
-    if (e.target.closest('.pbtn')) return;
+    if (e.target.closest('.period-select') || e.target.tagName === 'OPTION') return;
     var row = e.target.closest('.data-row');
     if (!row) return;
     var rowId = row.dataset.chartid;
@@ -21,26 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (icon) icon.classList.toggle('open', hidden);
     if (hidden && !window._CI[rowId]) initChart(rowId, 99999);
   });
-
-  // 期間ボタン（月単位）
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.pbtn');
-    if (!btn) return;
-    e.stopPropagation();
-    var rowId  = btn.dataset.row;
-    var months = parseInt(btn.dataset.months);
-    if (!rowId) return;
-    btn.closest('.chart-period-btns')
-       .querySelectorAll('.pbtn')
-       .forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    if (!window._CI[rowId]) {
-      initChart(rowId, months);
-    } else {
-      updatePeriod(rowId, months);
-    }
-  });
 });
+
+// プルダウン変更時
+function onPeriodChange(select) {
+  var rowId  = select.dataset.row;
+  var months = parseInt(select.value);
+  if (!rowId) return;
+  if (!window._CI[rowId]) {
+    initChart(rowId, months);
+  } else {
+    updatePeriod(rowId, months);
+  }
+}
 
 function filterByMonths(labels, values, months) {
   if (months >= 99999) return {labels: labels.slice(), values: values.slice()};
@@ -57,13 +50,12 @@ function filterByMonths(labels, values, months) {
     if (l.slice(0, 7) >= cutoff) { fl.push(l); fv.push(values[i]); }
   });
 
-  // 月次データは最低6点確保（少なすぎると直線になるため）
+  // 月次データは最低6点確保
   var minPoints = isMonthly ? 6 : 4;
   if (fl.length < minPoints) {
     var take = Math.min(Math.max(months * (isMonthly ? 3 : 1), minPoints), labels.length);
     return {labels: labels.slice(-take), values: values.slice(-take)};
   }
-
   return {labels: fl, values: fv};
 }
 
@@ -89,16 +81,7 @@ function initChart(rowId, months) {
   }
   var d = info.data;
   var filtered = filterByMonths(d.labels, d.values, months || 99999);
-
-  // データが3点未満の場合は全期間表示にフォールバック
-  if (filtered.values.length < 3) {
-    filtered = {labels: d.labels.slice(), values: d.values.slice()};
-    if (metaEl) {
-      metaEl.textContent = metaText(filtered.values, info.unit);
-    }
-  } else {
-    if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
-  }
+  if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
 
   window._CI[rowId] = new Chart(canvas.getContext('2d'), {
     type: 'line',
@@ -152,17 +135,9 @@ function updatePeriod(rowId, months) {
   if (!inst || !info || !info.data) return;
   var d = info.data;
   var filtered = filterByMonths(d.labels, d.values, months);
-
-  // データが3点未満なら全期間にフォールバック
-  if (filtered.values.length < 3) {
-    filtered = {labels: d.labels.slice(), values: d.values.slice()};
-    if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
-  } else {
-    if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
-  }
-
   inst.data.labels           = filtered.labels;
   inst.data.datasets[0].data = filtered.values;
   inst.data.datasets[0].pointRadius = filtered.values.length > 60 ? 0 : 3;
   inst.update();
+  if (metaEl) metaEl.textContent = metaText(filtered.values, info.unit);
 }
