@@ -92,6 +92,7 @@ function initChart(rowId, months) {
         borderColor: '#d9161c',
         borderWidth: 1.5,
         pointRadius: filtered.values.length > 60 ? 0 : 3,
+        pointHitRadius: 20,     // 当たり判定を広くする（点が非表示でも機能）
         pointHoverRadius: 5,
         tension: 0.3,
         fill: true,
@@ -101,6 +102,10 @@ function initChart(rowId, months) {
     options: {
       responsive: true,
       animation: {duration: 200},
+      interaction: {
+        mode: 'index',       // カーソル位置の最近傍データを取得
+        intersect: false,    // 点の上でなくてもツールチップを表示
+      },
       plugins: {
         legend: {display: false},
         tooltip: {
